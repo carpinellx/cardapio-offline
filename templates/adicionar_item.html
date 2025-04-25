@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Gerenciar Itens do Cardápio da Fazenda">
+    <title>Adicionar Item</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h1>Adicionar Novo Item</h1>
+    <form method="POST" action="/admin/adicionar" enctype="multipart/form-data">
+        <div>
+            <label for="imagem">Imagem:</label>
+            <input type="file" id="imagem" name="imagem">
+            <small>Selecione uma imagem para o item (opcional).</small>
+        </div>
+        <div>
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required>
+        </div>
+        <div>
+            <label for="descricao">Descrição:</label>
+            <textarea id="descricacategoria-barrao" name="descricao"></textarea>
+        </div>
+        <div>
+            <label for="preco">Preço:</label>
+            <input type="number" id="preco" name="preco" step="0.01" required>
+        </div>
+        <button type="submit">Adicionar Item</button>
+        <div>
+            <label for="categoria">Categoria:</label>
+            <select id="categoria" name="categoria" required>
+                <option value="" disabled selected>Selecione a categoria</option>
+                <option value="ENTRADAS">ENTRADAS</option>
+                <option value="SALADAS">SALADAS</option>
+                <option value="PRATO KIDS">PRATO KIDS</option>
+                <option value="SANDUICHES E BURGUES">SANDUICHES E BURGUES</option>
+                <option value="PARRILLA">PARRILLA</option>
+                <option value="TUCUNDUVA SMOKED">TUCUNDUVA SMOKED</option>
+                <option value="ACOMPANHAMENTOS">ACOMPANHAMENTOS</option>
+                <option value="SOBREMESAS">SOBREMESAS</option>
+                <option value="BEBIDAS">BEBIDAS</option>
+                <option value="CERVEJAS">CERVEJAS</option>
+                <option value="DRINKS">DRINKS</option>
+                <option value="CAFE">CAFÉ</option>
+                <option value="VINHO TINTO">VINHO TINTO</option>
+                <option value="VINHO BRANCO">VINHO BRANCO</option>
+                <option value="VINHO ROSE">VINHO ROSE</option>
+            </select>
+        </div>
+    </form>
+    <p><a href="/admin">Voltar à Administração</a> | <a href="/">Voltar ao Cardápio</a></p>
+</body>
+</html>

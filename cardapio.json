@@ -1,0 +1,752 @@
+[
+    {
+        "id": 1,
+        "nome": "Empanada de Carne - Unidade",
+        "descricao": "Empanada de Carne.",
+        "preco": 22.0,
+        "visivel": true,
+        "categoria": "ENTRADAS",
+        "ordem": 1,
+        "imagem": null
+    },
+    {
+        "id": 2,
+        "nome": "Empanada de Queijo com Cebola - Unidade",
+        "descricao": "Empanada de queijo com cebola caramelizada.",
+        "preco": 22.0,
+        "visivel": true,
+        "categoria": "ENTRADAS",
+        "ordem": 2,
+        "imagem": null
+    },
+    {
+        "id": 3,
+        "nome": "Empanada de Pernil - Unidade",
+        "descricao": "Empanada de pernil.",
+        "preco": 22.0,
+        "visivel": true,
+        "categoria": "ENTRADAS",
+        "ordem": 3,
+        "imagem": null
+    },
+    {
+        "id": 4,
+        "nome": "Polenta Frita",
+        "descricao": "Porção de Polenta Frita com 300g.",
+        "preco": 24.0,
+        "visivel": true,
+        "categoria": "ENTRADAS",
+        "ordem": 5,
+        "imagem": null
+    },
+    {
+        "id": 5,
+        "nome": "Batata Frita",
+        "descricao": "Porção de Batata Frita com 300g.",
+        "preco": 26.0,
+        "visivel": true,
+        "categoria": "ENTRADAS",
+        "ordem": 6,
+        "imagem": null
+    },
+    {
+        "id": 6,
+        "nome": "Empanadas Trio",
+        "descricao": "- 1x Empanada de Queijo com Cebola. - 1x Empanada de Carne. - 1x Empanada de Pernil.",
+        "preco": 60.0,
+        "visivel": true,
+        "categoria": "ENTRADAS",
+        "ordem": 4,
+        "imagem": null
+    },
+    {
+        "id": 7,
+        "nome": "Choripan - 2und",
+        "descricao": "",
+        "preco": 42.0,
+        "visivel": true,
+        "categoria": "ENTRADAS",
+        "ordem": 7,
+        "imagem": null
+    },
+    {
+        "id": 8,
+        "nome": "Bolinho de Arroz com Linguiça - 6 und",
+        "descricao": "",
+        "preco": 42.0,
+        "visivel": true,
+        "categoria": "ENTRADAS",
+        "ordem": 8,
+        "imagem": null
+    },
+    {
+        "id": 9,
+        "nome": "Croqueta da Nona - 6 unidades",
+        "descricao": "Croquete de carne com molho inglês.",
+        "preco": 45.0,
+        "visivel": true,
+        "categoria": "ENTRADAS",
+        "ordem": 9,
+        "imagem": null
+    },
+    {
+        "id": 10,
+        "nome": "Provoleta",
+        "descricao": "Provolone grelhado na parrilla com chimichurri e tomate confitado. 250g",
+        "preco": 45.0,
+        "visivel": true,
+        "categoria": "ENTRADAS",
+        "ordem": 10,
+        "imagem": null
+    },
+    {
+        "id": 11,
+        "nome": "Bolinho de Cupim - 6 unidades",
+        "descricao": "Bolinho de cupim desfiado com queijo e mandioca.",
+        "preco": 49.0,
+        "visivel": true,
+        "categoria": "ENTRADAS",
+        "ordem": 11,
+        "imagem": null
+    },
+    {
+        "id": 12,
+        "nome": "Brisket Fries",
+        "descricao": "Batata frita com brisket no molho inglês",
+        "preco": 54.0,
+        "visivel": true,
+        "categoria": "ENTRADAS",
+        "ordem": 12,
+        "imagem": null
+    },
+    {
+        "id": 13,
+        "nome": "Linguica Artesanal",
+        "descricao": "Linguiça tipo espiral feita na parrilla e chimichurri.",
+        "preco": 65.0,
+        "visivel": true,
+        "categoria": "ENTRADAS",
+        "ordem": 13,
+        "imagem": null
+    },
+    {
+        "id": 14,
+        "nome": "Ensalada Chilena - 150g",
+        "descricao": "Tomate, coentro, cebola e molho de limão.",
+        "preco": 28.0,
+        "visivel": true,
+        "categoria": "SALADAS",
+        "ordem": 1,
+        "imagem": null
+    },
+    {
+        "id": 15,
+        "nome": "Berinjela c/ Homus - 150g",
+        "descricao": "",
+        "preco": 39.0,
+        "visivel": true,
+        "categoria": "SALADAS",
+        "ordem": 2,
+        "imagem": null
+    },
+    {
+        "id": 16,
+        "nome": "Salada Caesar - 150g",
+        "descricao": "Alface-americano, frango empanado, parmesão e croûtos com maionese da casa.",
+        "preco": 39.0,
+        "visivel": true,
+        "categoria": "SALADAS",
+        "ordem": 3,
+        "imagem": "caesar-salad-with-fried-shrimps.jpg"
+    },
+    {
+        "id": 17,
+        "nome": "Mix Folhas - 150g",
+        "descricao": "Alface-americana, cenoura, repolho roxo, repolho verde e Doritos com maionese da casa.",
+        "preco": 46.0,
+        "visivel": true,
+        "categoria": "SALADAS",
+        "ordem": 4,
+        "imagem": null
+    },
+    {
+        "id": 18,
+        "nome": "Filé de Frango - 120g",
+        "descricao": "Acompanha Arroz branco, Feijão e Batata frita.",
+        "preco": 43.0,
+        "visivel": true,
+        "categoria": "PRATO KIDS",
+        "ordem": 1,
+        "imagem": null
+    },
+    {
+        "id": 19,
+        "nome": "Filé de Tilápia",
+        "descricao": "Acompanha Arroz branco, Feijão e Batata frita.",
+        "preco": 43.0,
+        "visivel": true,
+        "categoria": "PRATO KIDS",
+        "ordem": 2,
+        "imagem": null
+    },
+    {
+        "id": 20,
+        "nome": "Bife de Fraldinha",
+        "descricao": "Acompanha Arroz branco, Feijão e Batata frita.",
+        "preco": 52.0,
+        "visivel": true,
+        "categoria": "PRATO KIDS",
+        "ordem": 3,
+        "imagem": null
+    },
+    {
+        "id": 21,
+        "nome": "Bullet Burguer - 180g",
+        "descricao": "Pão, Hambúrguer, Queijo Cheddar e Maionese verde.",
+        "preco": 45.0,
+        "visivel": true,
+        "categoria": "SANDUÍCHES E BURGUES",
+        "ordem": 1,
+        "imagem": null
+    },
+    {
+        "id": 22,
+        "nome": "Bullet Burguer Bacon - 180g",
+        "descricao": "Pão, Hambúrguer, Queijo Cheddar, Maionese verde e Bacon.",
+        "preco": 48.0,
+        "visivel": true,
+        "categoria": "SANDUÍCHES E BURGUES",
+        "ordem": 2,
+        "imagem": null
+    },
+    {
+        "id": 23,
+        "nome": "Tucunduva Burguer - 180g",
+        "descricao": "Pão, Hambúrguer, Maionese verde, Cebola Caramelizada c/ Bacon e Ovo frito.",
+        "preco": 62.0,
+        "visivel": true,
+        "categoria": "SANDUÍCHES E BURGUES",
+        "ordem": 3,
+        "imagem": null
+    },
+    {
+        "id": 24,
+        "nome": "Sobrecoxa Desossada",
+        "descricao": "A sobrecoxa desossada é uma peça de carne de frango retirada da parte superior da coxa, na qual o osso foi removido.",
+        "preco": 102.0,
+        "visivel": true,
+        "categoria": "PARRILLA",
+        "ordem": 1,
+        "imagem": null
+    },
+    {
+        "id": 25,
+        "nome": "Bife de Chorizo",
+        "descricao": "O Bife de Chorizo é um dos cortes mais consagrados da Argentina. Vizinho do Bife Ancho, o Bife de Chorizo está localizado no meio do contrafilé e possui uma rica capa de gordura lateral, o que lhe garante um sabor intenso.",
+        "preco": 129.0,
+        "visivel": true,
+        "categoria": "PARRILLA",
+        "ordem": 2,
+        "imagem": null
+    },
+    {
+        "id": 26,
+        "nome": "Assado de tira",
+        "descricao": "O assado de tira é um corte de carne bovina retirado da região do lombo do animal, entre as costelas e o filé mignon.",
+        "preco": 138.0,
+        "visivel": true,
+        "categoria": "PARRILLA",
+        "ordem": 3,
+        "imagem": null
+    },
+    {
+        "id": 27,
+        "nome": "Fraldinha",
+        "descricao": "A fraldinha é um tipo de corte de carne bovina. Está localizada entre a parte traseira e a costela do animal.",
+        "preco": 139.0,
+        "visivel": true,
+        "categoria": "PARRILLA",
+        "ordem": 4,
+        "imagem": null
+    },
+    {
+        "id": 28,
+        "nome": "Denver Steak",
+        "descricao": "Corte nobre da parte dianteira do boi, o Denver Steak é macio, suculento e repleto de sabor, com excelente marmorização que garante uma carne macia e com textura irresistível.",
+        "preco": 139.0,
+        "visivel": true,
+        "categoria": "PARRILLA",
+        "ordem": 5,
+        "imagem": null
+    },
+    {
+        "id": 29,
+        "nome": "Bife Ancho",
+        "descricao": "O Bife Ancho é uma carne extraída na frente da região do contrafilé, entre a 2ª e 6ª vértebras. \r\nPor ser entremeada por gordura, seu elevado marmoreio garante um sabor mais intenso de churrasco.",
+        "preco": 139.0,
+        "visivel": true,
+        "categoria": "PARRILLA",
+        "ordem": 6,
+        "imagem": null
+    },
+    {
+        "id": 30,
+        "nome": "Picanha",
+        "descricao": "Conhecido por sua textura macia e sabor inconfundível. Originária da parte traseira do boi, este corte é especialmente apreciado por sua camada de gordura que contribui para a suculência e o sabor marcante.",
+        "preco": 142.0,
+        "visivel": true,
+        "categoria": "PARRILLA",
+        "ordem": 7,
+        "imagem": null
+    },
+    {
+        "id": 31,
+        "nome": "Linguiça - 2 und",
+        "descricao": "",
+        "preco": 82.0,
+        "visivel": true,
+        "categoria": "TUCUNDUVA SMOKED",
+        "ordem": 1,
+        "imagem": null
+    },
+    {
+        "id": 32,
+        "nome": "Cupim",
+        "descricao": "",
+        "preco": 119.0,
+        "visivel": true,
+        "categoria": "TUCUNDUVA SMOKED",
+        "ordem": 2,
+        "imagem": null
+    },
+    {
+        "id": 33,
+        "nome": "Pork Ribs - 4 und",
+        "descricao": "",
+        "preco": 129.0,
+        "visivel": true,
+        "categoria": "TUCUNDUVA SMOKED",
+        "ordem": 3,
+        "imagem": null
+    },
+    {
+        "id": 34,
+        "nome": "Brisket",
+        "descricao": "",
+        "preco": 139.0,
+        "visivel": true,
+        "categoria": "TUCUNDUVA SMOKED",
+        "ordem": 4,
+        "imagem": null
+    },
+    {
+        "id": 35,
+        "nome": "Costela",
+        "descricao": "",
+        "preco": 169.0,
+        "visivel": true,
+        "categoria": "TUCUNDUVA SMOKED",
+        "ordem": 5,
+        "imagem": null
+    },
+    {
+        "id": 36,
+        "nome": "Tucunduva Smoked Festival",
+        "descricao": "Costela (200g), Brisket (200g), Cupim (150g), Pork Ribs (4 und), Linguiça (2 und), Batata Frita (200g), Maionese e Picles.",
+        "preco": 439.0,
+        "visivel": true,
+        "categoria": "TUCUNDUVA SMOKED",
+        "ordem": 6,
+        "imagem": null
+    },
+    {
+        "id": 37,
+        "nome": "Arroz Branco - 300g",
+        "descricao": "Porção com 300g de arroz branco.",
+        "preco": 18.0,
+        "visivel": true,
+        "categoria": "ACOMPANHAMENTOS",
+        "ordem": 1,
+        "imagem": null
+    },
+    {
+        "id": 38,
+        "nome": "Pão da Casa - 4 Fatias",
+        "descricao": "Pão da Casa - 4 Fatias",
+        "preco": 18.0,
+        "visivel": true,
+        "categoria": "ACOMPANHAMENTOS",
+        "ordem": 2,
+        "imagem": null
+    },
+    {
+        "id": 39,
+        "nome": "Feijão Tradicional - 250g",
+        "descricao": "Porção de feijão.",
+        "preco": 22.0,
+        "visivel": true,
+        "categoria": "ACOMPANHAMENTOS",
+        "ordem": 3,
+        "imagem": null
+    },
+    {
+        "id": 40,
+        "nome": "Vinagrete com Farofa",
+        "descricao": "Tomate, cebola, salsa. Preparada com azeite, limão, sal e pimenta do reino.",
+        "preco": 22.0,
+        "visivel": true,
+        "categoria": "ACOMPANHAMENTOS",
+        "ordem": 4,
+        "imagem": null
+    },
+    {
+        "id": 41,
+        "nome": "Arroz Biro-Biro - 350g",
+        "descricao": "Arroz com bacon, ovo e batata palha.",
+        "preco": 28.0,
+        "visivel": true,
+        "categoria": "ACOMPANHAMENTOS",
+        "ordem": 5,
+        "imagem": null
+    },
+    {
+        "id": 42,
+        "nome": "Pure de Batata - 250g",
+        "descricao": "",
+        "preco": 28.0,
+        "visivel": true,
+        "categoria": "ACOMPANHAMENTOS",
+        "ordem": 6,
+        "imagem": null
+    },
+    {
+        "id": 43,
+        "nome": "Brócolis Caipira Alho e Óleo",
+        "descricao": "",
+        "preco": 28.0,
+        "visivel": true,
+        "categoria": "ACOMPANHAMENTOS",
+        "ordem": 7,
+        "imagem": null
+    },
+    {
+        "id": 44,
+        "nome": "Mac and Cheese - 300g",
+        "descricao": "",
+        "preco": 32.0,
+        "visivel": true,
+        "categoria": "ACOMPANHAMENTOS",
+        "ordem": 8,
+        "imagem": null
+    },
+    {
+        "id": 45,
+        "nome": "Legumes na Brasa - 350g",
+        "descricao": "Legumes variados da época, grelhados na brasa.",
+        "preco": 54.0,
+        "visivel": true,
+        "categoria": "ACOMPANHAMENTOS",
+        "ordem": 9,
+        "imagem": null
+    },
+    {
+        "id": 46,
+        "nome": "Churros com Doce de Leite",
+        "descricao": "Churros acompanhado com Doce de Leite",
+        "preco": 36.0,
+        "visivel": true,
+        "categoria": "SOBREMESAS",
+        "ordem": 1,
+        "imagem": null
+    },
+    {
+        "id": 47,
+        "nome": "Torta Black Rock",
+        "descricao": "Massa crocante, recheio cremoso de chocolate meio amargo coberto com caramelo e flor de sal.",
+        "preco": 48.0,
+        "visivel": true,
+        "categoria": "SOBREMESAS",
+        "ordem": 2,
+        "imagem": null
+    },
+    {
+        "id": 48,
+        "nome": "Torta de Limão do Bruno",
+        "descricao": "Massa amanteigada e crocante, muito recheio cremoso e azedinho, coberto com leve merengue suíço maçaricado.",
+        "preco": 52.0,
+        "visivel": true,
+        "categoria": "SOBREMESAS",
+        "ordem": 3,
+        "imagem": null
+    },
+    {
+        "id": 49,
+        "nome": "Àgua Mineral",
+        "descricao": "Disponível nas versões com e sem gás.",
+        "preco": 6.0,
+        "visivel": true,
+        "categoria": "BEBIDAS",
+        "ordem": 1,
+        "imagem": null
+    },
+    {
+        "id": 50,
+        "nome": "Coca Cola",
+        "descricao": "Disponível nas versões com e sem gás.",
+        "preco": 9.0,
+        "visivel": true,
+        "categoria": "BEBIDAS",
+        "ordem": 2,
+        "imagem": null
+    },
+    {
+        "id": 51,
+        "nome": "Guaraná",
+        "descricao": "Disponível nas versões com e sem gás.",
+        "preco": 9.0,
+        "visivel": true,
+        "categoria": "BEBIDAS",
+        "ordem": 3,
+        "imagem": null
+    },
+    {
+        "id": 52,
+        "nome": "Tônica",
+        "descricao": "Disponível nas versões com e sem gás.",
+        "preco": 9.0,
+        "visivel": true,
+        "categoria": "BEBIDAS",
+        "ordem": 4,
+        "imagem": null
+    },
+    {
+        "id": 53,
+        "nome": "H2OH!",
+        "descricao": "Disponível nas versões Limão e Limoneto.",
+        "preco": 9.0,
+        "visivel": true,
+        "categoria": "BEBIDAS",
+        "ordem": 5,
+        "imagem": null
+    },
+    {
+        "id": 54,
+        "nome": "Schwppes Citrus",
+        "descricao": "",
+        "preco": 9.0,
+        "visivel": true,
+        "categoria": "BEBIDAS",
+        "ordem": 6,
+        "imagem": null
+    },
+    {
+        "id": 55,
+        "nome": "Suco Natural",
+        "descricao": "Consulte os sabores disponíveis com o garçom.",
+        "preco": 15.0,
+        "visivel": true,
+        "categoria": "BEBIDAS",
+        "ordem": 7,
+        "imagem": null
+    },
+    {
+        "id": 56,
+        "nome": "Soda Italiana",
+        "descricao": "Consulte os sabores disponíveis com o garçom.",
+        "preco": 23.0,
+        "visivel": true,
+        "categoria": "BEBIDAS",
+        "ordem": 8,
+        "imagem": null
+    },
+    {
+        "id": 57,
+        "nome": "Corona",
+        "descricao": "Long Neck (330 ml)",
+        "preco": 15.0,
+        "visivel": true,
+        "categoria": "CERVEJAS",
+        "ordem": 1,
+        "imagem": null
+    },
+    {
+        "id": 58,
+        "nome": "Heineken",
+        "descricao": "Long Neck (330 ml)",
+        "preco": 15.0,
+        "visivel": true,
+        "categoria": "CERVEJAS",
+        "ordem": 2,
+        "imagem": null
+    },
+    {
+        "id": 59,
+        "nome": "Heineken Zero",
+        "descricao": "Long Neck (330 ml)",
+        "preco": 15.0,
+        "visivel": true,
+        "categoria": "CERVEJAS",
+        "ordem": 3,
+        "imagem": null
+    },
+    {
+        "id": 60,
+        "nome": "Aperol Spritz",
+        "descricao": "",
+        "preco": 35.0,
+        "visivel": true,
+        "categoria": "DRINKS",
+        "ordem": 1,
+        "imagem": null
+    },
+    {
+        "id": 61,
+        "nome": "Caipirinha de Cachaça",
+        "descricao": "Consulte os sabores disponíveis com o garçom.\r\n\r\n",
+        "preco": 29.0,
+        "visivel": true,
+        "categoria": "DRINKS",
+        "ordem": 2,
+        "imagem": null
+    },
+    {
+        "id": 62,
+        "nome": "Caipirinha de Vodka",
+        "descricao": "Consulte os sabores disponíveis com o garçom.\r\n\r\n",
+        "preco": 30.0,
+        "visivel": true,
+        "categoria": "DRINKS",
+        "ordem": 3,
+        "imagem": null
+    },
+    {
+        "id": 63,
+        "nome": "Campari Tônica",
+        "descricao": "Consulte os sabores disponíveis com o garçom.",
+        "preco": 30.0,
+        "visivel": true,
+        "categoria": "DRINKS",
+        "ordem": 4,
+        "imagem": null
+    },
+    {
+        "id": 64,
+        "nome": "Gin Tônica",
+        "descricao": "Consulte os sabores disponíveis com o garçom.",
+        "preco": 35.0,
+        "visivel": true,
+        "categoria": "DRINKS",
+        "ordem": 5,
+        "imagem": null
+    },
+    {
+        "id": 65,
+        "nome": "Saquerita",
+        "descricao": "Consulte os sabores disponíveis com o garçom.",
+        "preco": 25.0,
+        "visivel": true,
+        "categoria": "DRINKS",
+        "ordem": 6,
+        "imagem": null
+    },
+    {
+        "id": 66,
+        "nome": "Negroni",
+        "descricao": "",
+        "preco": 30.0,
+        "visivel": true,
+        "categoria": "DRINKS",
+        "ordem": 7,
+        "imagem": null
+    },
+    {
+        "id": 67,
+        "nome": "Fitzgerald",
+        "descricao": "",
+        "preco": 32.0,
+        "visivel": true,
+        "categoria": "DRINKS",
+        "ordem": 8,
+        "imagem": null
+    },
+    {
+        "id": 68,
+        "nome": "Cuba Libre",
+        "descricao": "",
+        "preco": 25.0,
+        "visivel": true,
+        "categoria": "DRINKS",
+        "ordem": 9,
+        "imagem": null
+    },
+    {
+        "id": 69,
+        "nome": "Moscow Mule",
+        "descricao": "",
+        "preco": 30.0,
+        "visivel": true,
+        "categoria": "DRINKS",
+        "ordem": 10,
+        "imagem": null
+    },
+    {
+        "id": 70,
+        "nome": "Mojito da Casa",
+        "descricao": "",
+        "preco": 25.0,
+        "visivel": true,
+        "categoria": "DRINKS",
+        "ordem": 11,
+        "imagem": null
+    },
+    {
+        "id": 71,
+        "nome": "Old Fashioned",
+        "descricao": "",
+        "preco": 35.0,
+        "visivel": true,
+        "categoria": "DRINKS",
+        "ordem": 12,
+        "imagem": null
+    },
+    {
+        "id": 72,
+        "nome": "Wheskey Sour",
+        "descricao": "",
+        "preco": 36.0,
+        "visivel": true,
+        "categoria": "DRINKS",
+        "ordem": 13,
+        "imagem": null
+    },
+    {
+        "id": 73,
+        "nome": "Aperol Margarita",
+        "descricao": "",
+        "preco": 32.0,
+        "visivel": true,
+        "categoria": "DRINKS",
+        "ordem": 14,
+        "imagem": null
+    },
+    {
+        "id": 74,
+        "nome": "Café Expresso",
+        "descricao": "",
+        "preco": 7.0,
+        "visivel": true,
+        "categoria": "CAFÉ",
+        "ordem": 1,
+        "imagem": null
+    },
+    {
+        "id": 75,
+        "nome": "Café Coado",
+        "descricao": "",
+        "preco": 7.0,
+        "visivel": true,
+        "categoria": "CAFÉ",
+        "ordem": 2,
+        "imagem": null
+    }
+]

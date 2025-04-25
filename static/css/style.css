@@ -1,0 +1,569 @@
+/* Estilos gerais */
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    background-color: #f8f9fa;
+    color: #343a40;
+}
+
+h1 {
+    color: #fff;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #eee;
+    border-radius: 5px;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.cabecalho-cardapio {
+    /* Seus estilos de cabeçalho existentes */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+    background-image: url('/static/imagens/casa_sede.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+}
+
+.cabecalho-cardapio .logo-restaurante {
+    max-width: 40%;
+    height: auto;
+    margin-bottom: 10px;
+    border-radius: 8px;
+}
+
+.cabecalho-cardapio h1 {
+    font-size: 2.5em;
+    margin-bottom: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Barra de Categorias */
+.categorias-barra {
+    display: flex;
+    overflow-x: auto;
+    padding: 10px;
+    background-color: #fff;
+    border-bottom: 1px solid #eee;
+    position: sticky; /* Torna a barra de categorias "grudenta" */
+    top: 0; /* Fixa a barra ao topo da tela */
+    z-index: 100; /* Garante que a barra fique acima do conteúdo rolável */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Opcional: Adiciona uma sombra para destacar a barra */
+}
+
+.categorias-barra a {
+    background: none;
+    border: none;
+    padding: 10px 15px;
+    margin-right: 10px;
+    font-size: 1em;
+    color: #343a40;
+    cursor: pointer;
+    white-space: nowrap;
+    text-decoration: none;
+}
+
+.categorias-barra a.active {
+    color: #0b1c41;
+    font-weight: bold;
+}
+
+.categoria-botao {
+    background: none;
+    border: none;
+    padding: 10px 15px;
+    margin-right: 10px;
+    font-size: 1em;
+    color: #343a40;
+    cursor: pointer;
+    white-space: nowrap; /* Evita que o texto do botão quebre */
+}
+
+.categoria-botao.active {
+    color: #28a745; /* Cor de destaque para a categoria ativa */
+    font-weight: bold;
+}
+
+/* Container da Categoria */
+.categoria-container {
+    padding: 20px;
+}
+
+.categoria-titulo {
+    font-size: 2em;
+    font-weight: bold;
+    color: #343a40;
+    margin-bottom: 5px;
+}
+
+.categoria-itens-count {
+    color: #6c757d;
+    font-size: 0.9em;
+    margin-bottom: 15px;
+}
+
+/* Container dos Itens */
+.itens-container {
+    display: grid;
+    grid-template-columns: 1fr; /* Uma coluna por padrão */
+    gap: 15px;
+}
+
+/* Layout Detalhado do Item */
+.cardapio-item-detalhado {
+    display: flex;
+    align-items: flex-start; /* Alinha verticalmente a imagem e o texto no topo */
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    padding: 15px;
+}
+
+.item-imagem-detalhado {
+    max-width: 100px;
+    height: auto;
+    margin-right: 15px;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+.item-info {
+    flex-grow: 1;
+}
+
+.item-nome-detalhado {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #343a40;
+    margin-bottom: 5px;
+}
+
+.item-descricao-detalhado {
+    color: #6c757d;
+    font-size: 0.9em;
+    line-height: 1.4;
+    margin-bottom: 8px;
+}
+
+.item-preco-detalhado {
+    font-size: 1em;
+    font-weight: bold;
+    color: #28a745;
+}
+
+/* Layout dos Itens em Linha */
+.itens-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+}
+
+.cardapio-item-linha {
+    display: flex; /* Alinha a imagem e as informações na mesma linha */
+    align-items: center; /* Alinha verticalmente os itens */
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    padding: 15px;
+}
+
+.item-imagem-linha {
+    max-width: 80px; /* Reduzi um pouco a largura da imagem */
+    height: auto;
+    margin-right: 15px;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+.item-info-linha {
+    flex-grow: 1; /* Ocupa o espaço restante */
+}
+
+.item-nome-linha {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #343a40;
+    margin-bottom: 3px; /* Reduzi um pouco a margem */
+}
+
+.item-descricao-linha {
+    color: #6c757d;
+    font-size: 0.9em;
+    line-height: 1.3; /* Reduzi um pouco a altura da linha */
+    margin-bottom: 5px; /* Reduzi um pouco a margem */
+}
+
+.item-preco-linha {
+    font-size: 1em;
+    font-weight: bold;
+    color: #28a745;
+}
+
+/* Responsividade para telas maiores (opcional: exibir itens em mais colunas) */
+@media (min-width: 768px) {
+    .itens-container {
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Ajustei a largura mínima */
+    }
+}
+
+/* Media Query para telas menores (ex: tablets com largura máxima de 768px) */
+@media (max-width: 768px) {
+    .cabecalho-cardapio h1 {
+        font-size: 2.0em; /* Reduz o tamanho da fonte para tablets */
+    }
+}
+
+/* Media Query para telas ainda menores (ex: smartphones com largura máxima de 480px) */
+@media (max-width: 480px) {
+    .cabecalho-cardapio h1 {
+        font-size: 1.5em; /* Reduz ainda mais o tamanho da fonte para smartphones */
+    }
+}
+
+/* Media Query para telas ainda menores (opcional: smartphones muito pequenos) */
+@media (max-width: 320px) {
+    .cabecalho-cardapio h1 {
+        font-size: 1.2em; /* Reduz ainda mais para telas muito pequenas */
+    }
+}
+
+form div {
+    margin-bottom: 10px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="number"],
+textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+textarea {
+    resize: vertical;
+}
+
+button {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* Estilo para o cabeçalho "Arrastar" */
+th:nth-child(1) {
+    width: 40px; /* Defina uma largura menor */
+    text-align: center; /* Centraliza o texto "Arrastar" (se você optar por mantê-lo) */
+    padding: 8px 0; /* Ajusta o padding vertical para menor espaçamento */
+}
+
+/* Estilo para a célula da área de arrastar */
+td.drag-area {
+    width: 40px; /* Garante a mesma largura do cabeçalho */
+    display: flex; /* Use flexbox para centralizar o conteúdo */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    cursor: grab;
+    padding: 8px 0; /* Ajusta o padding vertical */
+}
+
+/* Estilo para o ícone/texto de arrastar */
+.drag-handle {
+    font-size: 1.8em; /* Aumenta o tamanho da fonte para tornar "Ordem" maior */
+    line-height: 1;
+    color: #555;
+    padding: 5px; /* Adiciona um pequeno padding interno para aumentar a área clicável */
+    display: inline-block; /* Permite que o padding funcione corretamente */
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+/* Estilos para a página do cardápio */
+.cardapio-item {
+    margin-bottom: 25px;
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    flex: 1 0 calc(33.33% - 20px);
+}
+
+.item-nome {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.item-descricao {
+    color: #666;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.item-preco {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #28a745;
+}
+
+/* Estilo para o cabeçalho */
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Separador visual entre itens */
+.cardapio-item + .cardapio-item {
+    border-top: 2px solid #ccc;
+    padding-top: 25px;
+}
+
+/* Container dos itens do cardápio */
+.cardapio-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Itens com imagem e funcionalidade de ampliação */
+.cardapio-item.com-imagem {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.cardapio-item.com-imagem .item-imagem {
+    max-width: 100px;
+    height: auto;
+    margin-right: 15px;
+    border-radius: 5px;
+}
+
+.cardapio-item.com-imagem .item-detalhes {
+    flex-grow: 1;
+}
+
+@media (max-width: 480px) {
+    .cardapio-item.com-imagem {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .cardapio-item.com-imagem .item-imagem {
+        max-width: 100%;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+}
+
+/* Imagem ampliada */
+.ampliada {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    cursor: pointer;
+}
+
+.ampliada img {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+}
+
+/* Estilos da tabela */
+table {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #f8f8f8;
+    font-weight: bold;
+    color: #555;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tbody tr:hover {
+    background-color: #e0e0e0;
+}
+
+/* Botões */
+.editar-button,
+.visivel-button,
+.remover-button {
+    border: none;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-right: 5px;
+}
+
+.editar-button {
+    background-color: #007bff;
+    color: white;
+}
+
+.visivel-button.true {
+    background-color: #28a745;
+    color: white;
+}
+
+.visivel-button.false,
+.remover-button {
+    background-color: #dc3545;
+    color: white;
+}
+
+/* Título da categoria */
+h2.categoria-titulo {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #333;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 5px;
+}
+
+/* Mensagens flash */
+.flashed-messages {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 1000;
+    list-style: none;
+    padding: 0;
+    margin: 0; /* Remova a margem padrão da lista */
+    width: auto; /* Adapta a largura ao conteúdo */
+}
+
+.flashed-messages li {
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-bottom: 0; /* Remova a margem inferior dos itens */
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out; /* Reduzi a duração do fade-out */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-width: 250px; /* Largura mínima semelhante ao toast */
+    word-wrap: break-word;
+}
+
+.flashed-messages li.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.flashed-messages li.warning {
+    background-color: #fff3cd;
+    color: #85640a;
+    border: 1px solid #ffeeba;
+}
+
+.flashed-messages li.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.flashed-messages li.fade-out {
+    opacity: 0;
+    transform: translateX(-50px); /* Adiciona um pequeno deslocamento para o fade-out */
+}
+
+/* Adiciona um botão de fechar semelhante ao toast */
+.flashed-messages li .toast-close {
+    margin-left: 15px;
+    cursor: pointer;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: inherit; /* Herda a cor do texto da mensagem */
+    text-decoration: none; /* Remove sublinhado padrão de links */
+}
+
+.flashed-messages li .toast-close:hover {
+    color: darken(inherit, 20%); /* Escurece a cor no hover */
+}
+
+.add-item-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: bold;
+}
+.add-item-button:hover {
+    background-color: #0056b3;
+}

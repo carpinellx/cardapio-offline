@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gerenciar Itens do Cardápio</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
+</head>
+<body>
+    <h2>Gerenciar Itens do Cardápio</h2>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <ul class="flashed-messages">
+                {% for category, message in messages %}
+                    <li class="{{ category }}">{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+
+    <div class="categorias-barra">
+        {% set ordem_categorias = ["ENTRADAS", "SALADAS", "PRATO KIDS", "SANDUÍCHES E BURGUES", "PARRILLA", "TUCUNDUVA SMOKED", "ACOMPANHAMENTOS", "SOBREMESAS", "BEBIDAS", "CERVEJAS", "DRINKS", "CAFÉ", "VINHO TINTO", "VINHO BRANCO", "VINHO ROSÉ"] %}
+        {% for categoria in ordem_categorias %}
+            {% if categoria in cardapio_por_categoria %}
+                <a href="#categoria-{{ categoria|replace(' ', '-') }}-anchor" class="categoria-botao">{{ categoria }}</a>
+            {% endif %}
+        {% endfor %}
+    </div>
+    <p><a href="/admin/adicionar_form">Adicionar Novo Item</a> | <a href="/">Voltar ao Cardápio</a></p>
+
+    {% if cardapio_por_categoria %}
+        {% for categoria, itens in cardapio_por_categoria.items() %}
+        <h2 class="categoria-titulo" id="categoria-{{ categoria|replace(' ', '-')}}-anchor">
+            {{ categoria }}
+        </h2>
+            <table data-categoria="{{ categoria }}">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Nome</th>
+                        <th>Descrição</th>
+                        <th>Preço</th>
+                        <th>Visível</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in itens %}
+                    <tr data-item-id="{{ item.id }}">
+                        <td class="drag-area" style="cursor: grab;"><div class="drag-handle">☰</div></td>
+                        <td>{{ item.nome }}</td>
+                        <td>{{ item.descricao }}</td>
+                        <td>R$ {{ item.preco }}</td>
+                        <td>
+                            {% if item.visivel %}
+                                <span style="color: green;">Sim</span>
+                            {% else %}
+                                <span style="color: red;">Não</span>
+                            {% endif %}
+                        </td>
+                        <td>
+                            <a href="/admin/editar/{{ item.id }}" class="editar-button">Editar</a>
+                            <form method="POST" action="{{ url_for('alterar_visibilidade', item_id=item.id) }}" style="display: inline;">
+                                <input type="hidden" name="_method" value="POST">
+                                <button type="submit" class="visivel-button {{ item.visivel }}">
+                                    {% if item.visivel %}
+                                        Ocultar
+                                    {% else %}
+                                        Exibir
+                                    {% endif %}
+                                </button>
+                            </form>
+                            <form method="POST" action="/admin/remover/{{ item.id }}" style="display: inline;">
+                                <input type="hidden" name="_method" value="DELETE">
+                                <button type="submit" class="remover-button" onclick="return confirm('Tem certeza que deseja remover o item &quot;{{ item.nome }}&quot;?');">Remover</button>
+                            </form>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% endfor %}
+    {% else %}
+        <p>Nenhum item cadastrado.</p>
+    {% endif %}
+
+    <script>
+        $('tbody').sortable({
+    items: 'tr',
+    handle: '.drag-area',
+    placeholder: 'ui-sortable-placeholder',
+    cancel: 'input, textarea, button, select, a',
+    stop: function(event, ui) {
+        var categoria = $(this).closest('table').data('categoria');
+        var novaOrdem = $(this).sortable('toArray', { attribute: 'data-item-id' });
+
+        fetch('/admin/ordenar_itens', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                categoria: categoria,
+                ordem: novaOrdem
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                console.log('Ordem atualizada com sucesso!');
+            } else {
+                console.error('Erro ao atualizar a ordem:', data.error);
+            }
+        })
+        .catch(error => {
+            console.error('Erro na requisição AJAX:', error);
+        });
+    }
+});
+
+    // Script para o fade-out das mensagens flash
+    document.addEventListener('DOMContentLoaded', function() {
+    const flashedMessages = document.querySelectorAll('.flashed-messages li');
+
+    flashedMessages.forEach(message => {
+        // Adiciona botão de fechar a cada mensagem flash
+        const closeButton = document.createElement('span');
+        closeButton.classList.add('toast-close');
+        closeButton.textContent = '×';
+        closeButton.addEventListener('click', () => {
+            message.remove();
+        });
+        message.appendChild(closeButton);
+
+        // Inicia o fade-out automático após um tempo
+        setTimeout(() => {
+            message.classList.add('fade-out');
+            setTimeout(() => {
+                message.remove();
+            }, 500); // Reduzi o tempo do segundo timeout para corresponder à transição
+        }, 4000);
+    });
+
+        // Adicionar botão fixo para "Adicionar Novo Item"
+        const addItemButton = document.createElement('div');
+        addItemButton.innerHTML = '<a href="/admin/adicionar_form" class="add-item-button">Adicionar Novo Item</a>';
+
+        document.body.appendChild(addItemButton);
+    });
+
+    document.querySelectorAll('.categorias-barra a').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+
+        if (targetElement) {
+            const menuBar = document.querySelector('.categorias-barra');
+            const offset = menuBar ? menuBar.offsetHeight : 0; // Altura do menu fixo ou 0 como fallback
+            const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+            const offsetPosition = elementPosition - offset;
+
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
+            });
+        } else {
+            console.error(`Elemento de destino não encontrado: ${targetId}`);
+        }
+    });
+});
+    // Ensure the button text is visible
+    const addItemLink = addItemButton.querySelector('a');
+    addItemLink.style.color = '#fff';
+    addItemLink.style.textDecoration = 'none';
+    addItemLink.style.fontWeight = 'bold';
+    </script>
+    </body>
+    </html>
+</script>
+</body>
+</html>

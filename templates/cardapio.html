@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cardápio da Fazenda">
+    <title>Cardápio da Fazenda</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="cabecalho-cardapio">
+        <img src="{{ url_for('static', filename='imagens/logo_restaurante.png') }}" alt="Logo do Restaurante" class="logo-restaurante">
+        <h1>Restaurante Fazenda Tucunduva</h1>
+        <p><strong> Rodovia Dom Gabriel Paulino Bueno Couto, km 92,5 - Pedregulho - Cabreuva / SP</strong></p>
+    </div>
+
+    <div class="categorias-barra">
+        {% for categoria in cardapio_por_categoria %}
+            <a href="#categoria-{{ categoria|replace(' ', '-') }}" class="categoria-botao">{{ categoria }}</a>
+        {% endfor %}
+    </div>
+
+    {% if cardapio_por_categoria %}
+        {% for categoria, itens in cardapio_por_categoria.items() %}
+            <div class="categoria-container" id="categoria-{{ categoria|replace(' ', '-') }}">
+                <h2 class="categoria-titulo">{{ categoria }}</h2>
+                <p class="categoria-itens-count">{{ itens|length }} itens</p>
+                <div class="itens-container">
+                    {% for item in itens %}
+                        <div class="cardapio-item-linha">
+                            {% if item.imagem %}
+                            <img src="{{ url_for('static', filename='imagens/' + item.imagem) }}" alt="{{ item.nome }}" class="item-imagem-linha" data-ampliar>
+                        {% endif %}
+                            <div class="item-info-linha">
+                                <h3 class="item-nome-linha">{{ item.nome }}</h3>
+                                <p class="item-descricao-linha">{{ item.descricao }}</p>
+                                <p class="item-preco-linha">R$ {{ "%.2f"|format(item.preco) }}</p>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>Nenhum item disponível no cardápio.</p>
+    {% endif %}
+
+    <p><a href="/admin">Administração</a></p>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const imagensAmpliaveis = document.querySelectorAll('[data-ampliar]');
+            const body = document.body; // Ou um container específico se preferir
+
+            imagensAmpliaveis.forEach(img => {
+                img.addEventListener('click', function() {
+                    const imagemAmpliada = document.createElement('div');
+                    imagemAmpliada.classList.add('ampliada');
+
+                    const imagemOriginalSrc = this.getAttribute('src');
+                    const imagemElemento = document.createElement('img');
+                    imagemElemento.setAttribute('src', imagemOriginalSrc);
+
+                    imagemAmpliada.appendChild(imagemElemento);
+                    body.appendChild(imagemAmpliada);
+
+                    // Adiciona um evento de clique para fechar a imagem ampliada
+                    imagemAmpliada.addEventListener('click', function() {
+                        body.removeChild(this);
+                    });
+                });
+            });
+        });
+        document.querySelectorAll('.categorias-barra a').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+
+        if (targetElement) {
+            const menuBar = document.querySelector('.categorias-barra');
+            const offset = menuBar ? menuBar.offsetHeight : 0; // Altura do menu fixo
+            const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+            const offsetPosition = elementPosition - offset;
+
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
+            });
+        }
+    });
+});
+    </script>
+</body>
+</html>

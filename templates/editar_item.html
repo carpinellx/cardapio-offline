@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Editar Item</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+        /* Seus estilos CSS para o formulário de edição */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        form {
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            display: inline-block;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="number"],
+        textarea,
+        select {
+            width: 300px;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        input[type="checkbox"] {
+            margin-right: 5px;
+        }
+        button[type="submit"] {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        .error {
+            color: red;
+        }
+        .current-image {
+            margin-top: 10px;
+            border: 1px solid #eee;
+            padding: 5px;
+            border-radius: 4px;
+        }
+        .current-image img {
+            max-width: 100px;
+            height: auto;
+            display: block;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Editar Item</h1>
+    {% if error %}
+        <p class="error">{{ error }}</p>
+    {% endif %}
+    <form method="POST" action="{{ url_for('editar_item', item_id=item.id) }}" enctype="multipart/form-data">
+        <div>
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" value="{{ item.nome }}" required>
+        </div>
+        <div>
+            <label for="descricao">Descrição:</label>
+            <textarea id="descricao" name="descricao">{{ item.descricao }}</textarea>
+        </div>
+        <div>
+            <label for="preco">Preço:</label>
+            <input type="number" id="preco" name="preco" step="0.01" value="{{ item.preco }}" required>
+        </div>
+        <div>
+            <label for="visivel">Visível:</label>
+            <input type="checkbox" id="visivel" name="visivel" {% if item.visivel %}checked{% endif %}>
+        </div>
+        <div>
+            <label for="categoria">Categoria:</label>
+            <select id="categoria" name="categoria" required>
+                <option value="ENTRADAS" {% if item.categoria == 'ENTRADAS' %}selected{% endif %}>ENTRADAS</option>
+                <option value="PARRILLA" {% if item.categoria == 'PARRILLA' %}selected{% endif %}>PARRILLA</option>
+                <option value="ACOMPANHAMENTOS" {% if item.categoria == 'ACOMPANHAMENTOS' %}selected{% endif %}>ACOMPANHAMENTOS</option>
+                <option value="SALADAS" {% if item.categoria == 'SALADAS' %}selected{% endif %}>SALADAS</option>
+                <option value="AGUA MINERAL" {% if item.categoria == 'AGUA MINERAL' %}selected{% endif %}>ÁGUA MINERAL</option>
+                <option value="SODAS ITALIANAS" {% if item.categoria == 'SODAS ITALIANAS' %}selected{% endif %}>SODAS ITALIANAS</option>
+                <option value="SUCOS" {% if item.categoria == 'SUCOS' %}selected{% endif %}>SUCOS</option>
+                <option value="DRINKS" {% if item.categoria == 'DRINKS' %}selected{% endif %}>DRINKS</option>
+                <option value="CERVEJAS" {% if item.categoria == 'CERVEJAS' %}selected{% endif %}>CERVEJAS</option>
+                <option value="VINHO TINTO" {% if item.categoria == 'VINHO TINTO' %}selected{% endif %}>VINHO TINTO</option>
+                <option value="VINHO BRANCO" {% if item.categoria == 'VINHO BRANCO' %}selected{% endif %}>VINHO BRANCO</option>
+                <option value="VINHO ROSE" {% if item.categoria == 'VINHO ROSE' %}selected{% endif %}>VINHO ROSE</option>
+            </select>
+        </div>
+        <div>
+            <label for="nova_imagem">Nova Imagem:</label>
+            <input type="file" id="nova_imagem" name="nova_imagem">
+            <small>Selecione uma nova imagem para substituir a atual (opcional).</small>
+        </div>
+        {% if item.imagem %}
+        <div class="current-image">
+            <label>Imagem Atual:</label>
+            <img src="{{ url_for('static', filename='imagens/' + item.imagem) }}" alt="{{ item.nome }}">
+            <input type="hidden" name="imagem_atual" value="{{ item.imagem }}">
+        </div>
+        {% endif %}
+        <button type="submit">Salvar Alterações</button>
+    </form>
+</body>
+</html>
