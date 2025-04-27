@@ -131,6 +131,7 @@ def editar_form(item_id):
 # Rota para editar item
 @app.route('/admin/editar/<int:item_id>', methods=['POST'])
 def editar_item(item_id):
+    # Obter os dados do formulário
     nome = request.form.get('nome')
     descricao = request.form.get('descricao')
     preco = request.form.get('preco')
@@ -143,13 +144,14 @@ def editar_item(item_id):
         flash('Nome, preço e categoria são obrigatórios.', 'error')
         return redirect(url_for('editar_form', item_id=item_id))
 
+    # Validar o preço
     try:
         preco = float(preco)
     except ValueError:
-        flash('Preço inválido.', 'error')
+        flash('Preço inválido. Insira um valor numérico.', 'error')
         return redirect(url_for('editar_form', item_id=item_id))
 
-    # Lidar com o upload da nova imagem
+    # Lidar com o upload de uma nova imagem
     if 'nova_imagem' in request.files:
         file = request.files['nova_imagem']
         if file and allowed_file(file.filename):
@@ -157,24 +159,25 @@ def editar_item(item_id):
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
             nova_imagem = filename
 
+    # Carregar o cardápio e atualizar o item
     cardapio = carregar_cardapio()
-    item_encontrado = False
-    for item in cardapio:
-        if item['id'] == item_id:
-            item['nome'] = nome
-            item['descricao'] = descricao
-            item['preco'] = preco
-            item['categoria'] = categoria
-            item['imagem'] = nova_imagem if nova_imagem else imagem_atual
-            item_encontrado = True
-            break
+    item = next((i for i in cardapio if i['id'] == item_id), None)
 
-    if item_encontrado:
+    if item:
+        # Atualizar os dados do item
+        item['nome'] = nome
+        item['descricao'] = descricao
+        item['preco'] = preco
+        item['categoria'] = categoria
+        item['imagem'] = nova_imagem if nova_imagem else imagem_atual
+
+        # Salvar as alterações no cardápio
         salvar_cardapio(cardapio)
         flash(f'Item "{nome}" editado com sucesso!', 'success')
     else:
         flash('Item não encontrado.', 'warning')
 
+    # Redirecionar para a página de gerenciamento
     return redirect(url_for('gerenciar_itens'))
 
 # Rota para gerenciar itens
