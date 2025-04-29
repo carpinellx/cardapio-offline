@@ -32,7 +32,6 @@ a:hover {
 }
 
 .cabecalho-cardapio {
-    /* Seus estilos de cabeçalho existentes */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -45,11 +44,12 @@ a:hover {
     color: white;
 }
 
-.cabecalho-cardapio .logo-restaurante {
-    max-width: 40%;
-    height: auto;
+.logo-restaurante {
+    max-width: 40%; /* Defina uma largura máxima para a logo */
+    height: auto;    /* A altura ajusta-se proporcionalmente */
     margin-bottom: 10px;
-    border-radius: 8px;
+    border-radius: 8px; /* Mova o border-radius para cá */
+    object-fit: contain; /* ou cover, teste qual prefere */
 }
 
 .cabecalho-cardapio h1 {
@@ -219,17 +219,15 @@ a:hover {
     color: #28a745;
 }
 
-/* Responsividade para telas maiores (opcional: exibir itens em mais colunas) */
-@media (min-width: 768px) {
-    .itens-container {
-        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Ajustei a largura mínima */
-    }
-}
-
 /* Media Query para telas menores (ex: tablets com largura máxima de 768px) */
 @media (max-width: 768px) {
     .cabecalho-cardapio h1 {
         font-size: 2.0em; /* Reduz o tamanho da fonte para tablets */
+    }
+    .logo-restaurante {
+        max-width: 60%; /* Aumente um pouco a largura em tablets, se desejar */
+        height: auto;
+        object-fit: contain; /* ou cover */
     }
 }
 
@@ -237,6 +235,11 @@ a:hover {
 @media (max-width: 480px) {
     .cabecalho-cardapio h1 {
         font-size: 1.5em; /* Reduz ainda mais o tamanho da fonte para smartphones */
+    }
+    .logo-restaurante {
+        max-width: 80%; /* Aumente mais a largura em smartphones, se desejar */
+        height: auto;
+        object-fit: contain; /* ou cover */
     }
 }
 
